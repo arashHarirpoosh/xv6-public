@@ -89,3 +89,15 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+// return children number
+
+int
+sys_getChildren(void)
+{
+
+int pid;
+argint(0, &pid);
+return pid;
+
+}
