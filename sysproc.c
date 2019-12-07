@@ -108,3 +108,10 @@ argint(0, &pid);
 return pid;
 
 }
+
+//return number of times a system call is invoked
+int
+sys_getCount(void)
+{
+return 231
+}
