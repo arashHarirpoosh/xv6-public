@@ -97,8 +97,8 @@ sys_getppid(void)
 return myproc()-> parent->pid;
 }
 
-// return children number
 
+<<<<<<< HEAD
 int
 sys_getChildren(void)
 {
@@ -115,3 +115,5 @@ sys_getCount(void)
 {
 return 231
 }
+=======
+>>>>>>> 8d287d0438dffcbc4e82fa719e187198e7cda3da
