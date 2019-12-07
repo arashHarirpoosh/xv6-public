@@ -532,3 +532,31 @@ procdump(void)
     cprintf("\n");
   }
 }
+
+// return children number
+
+int
+sys_getChildren(void)
+{
+
+struct proc *p;
+int pid;
+int res = 0;
+int cons = 1;
+argint(0, &pid);
+ // Loop over process table looking for process to run.
+    acquire(&ptable.lock);
+    for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
+      if(p -> parent -> pid == pid)
+      {
+      	res = res + pid*cons;
+      	cons = 10 * cons;
+      }
+      cprintf("pid is : %d ppid is : %d \n", p->pid, p->parent->pid);
+
+    }
+    release(&ptable.lock);
+
+return res;
+
+}

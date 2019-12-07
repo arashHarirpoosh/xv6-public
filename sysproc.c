@@ -97,14 +97,4 @@ sys_getppid(void)
 return myproc()-> parent->pid;
 }
 
-// return children number
 
-int
-sys_getChildren(void)
-{
-
-int pid;
-argint(0, &pid);
-return pid;
-
-}
