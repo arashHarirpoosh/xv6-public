@@ -90,6 +90,13 @@ sys_uptime(void)
   return xticks;
 }
 
+// return parent id
+int
+sys_getppid(void)
+{
+return myproc()-> parent->pid;
+}
+
 // return children number
 
 int

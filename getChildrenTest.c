@@ -5,6 +5,6 @@
 int
 main(void)
 {
-printf(1,"Process Id Is :  %d \n", getChildren(getpid()));
+printf(1,"Process Id Is :  %d \n", getChildren(getppid(getpid())));
 exit();
 }
