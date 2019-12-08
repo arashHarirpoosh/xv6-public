@@ -3,8 +3,12 @@
 #include "user.h"
  
 int
-main(int call_num)
+main(void)
 {
-printf(1,"Process count Is :  %d \n", getCount(call_num));
+wait();
+wait();
+fork();
+printf(1,"Process count Is :  %d \n", getCount(1));
+printf(1,"Process count Is :  %d \n", getCount(3));
 exit();
 }
