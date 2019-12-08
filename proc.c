@@ -546,8 +546,9 @@ int cons = 1;
 argint(0, &pid);
  // Loop over process table looking for process to run.
     acquire(&ptable.lock);
+
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if(p->state == RUNNABLE)
+      if(p->state == RUNNING)
       {
       	if(p -> parent -> pid == pid)
       	{
@@ -556,6 +557,7 @@ argint(0, &pid);
       	}
       	cprintf("pid is : %d ppid is : %d \n", p->pid, p->parent->pid);
       }
+
 
     }
     release(&ptable.lock);

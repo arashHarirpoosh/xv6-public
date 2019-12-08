@@ -9,20 +9,26 @@ int pid, pid1, pid2;
 pid = fork();
 pid1 = fork();
 pid2 = fork();
-    // Parent process  
-    if (pid > 0 || pid1 > 0 || pid2 > 0)
-    { 
-        sleep(50); 
-        printf(1,"Process Id Is :  %d \n", getpid());
-        exit();
+    if (pid > 0 || pid1 > 0 || pid2 > 0) {
+    
+	printf(1,"Process Id Is :  %d \n", getpid());
+	
+    	sleep(10);
+    	exit();
+
     }
-    // Child process 
-    else   
-    {  
-    	sleep(1);
-        exit(); 
-   
+
+  
+    // Note that pid is 0 in child process 
+    // and negative if fork() fails 
+    else 
+    { 
+
+	sleep(5);
+	printf(1, "all childrens are : %d \n", getChildren(getppid()));
+	exit();
     } 
-
-
+        	
+        	
+return 0;
 }
