@@ -533,8 +533,17 @@ procdump(void)
   }
 }
 
-// return children number
+// Count Number Of Digits
+int countDigit(int n) 
+{ 
+    if (n == 0) 
+    	{
+        return 0;
+        } 
+    return 1 + countDigit(n / 10); 
+} 
 
+// return children number
 int
 sys_getChildren(void)
 {
@@ -552,7 +561,10 @@ argint(0, &pid);
       	if(p -> parent -> pid == pid)
       	{
       		res = res + p -> pid*cons;
-      		cons = 10 * cons;
+      		for(int i=0; i<countDigit(p -> pid); i++ )
+      		{
+      			cons = 10 * cons;
+      		}
       		cprintf("pid is : %d ppid is : %d \n", p->pid, p->parent->pid);
       	}
 

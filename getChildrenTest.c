@@ -33,14 +33,12 @@ else if(pid > 0)
         	{
         	  
                     int childs = getChildren(getpid());
-                    printf(1,"All Childrens Are %d .\n",childs);
+                    printf(1,"All Childrens Of %d Are %d .\n", getpid(), childs);
                     exit();
 		}
 	}
 
-
-
-}        	
+   }        	
         	
 return 0;
 }
