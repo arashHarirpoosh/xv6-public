@@ -558,10 +558,10 @@ argint(0, &pid);
 
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
     
-      	if(p -> parent -> pid == pid)
+      	if(p->parent->pid == pid)
       	{
-      		res = res + p -> pid*cons;
-      		for(int i=0; i<countDigit(p -> pid); i++ )
+      		res = res + p->pid*cons;
+      		for(int i=0; i<countDigit(p->pid); i++ )
       		{
       			cons = 10 * cons;
       		}

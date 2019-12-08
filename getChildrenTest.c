@@ -32,8 +32,8 @@ else if(pid > 0)
         else if(pid2 > 0)
         	{
         	  
-                    int childs = getChildren(getpid());
-                    printf(1,"All Childrens Of %d Are %d .\n", getpid(), childs);
+                    int children = getChildren(getpid());
+                    printf(1,"All Childrens Of %d Are %d .\n", getpid(), children);
                     exit();
 		}
 	}
