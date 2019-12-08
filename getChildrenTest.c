@@ -9,26 +9,38 @@ int pid, pid1, pid2;
 pid = fork();
 pid1 = fork();
 pid2 = fork();
-    if (pid > 0 || pid1 > 0 || pid2 > 0) {
-    
-	printf(1,"Process Id Is :  %d \n", getpid());
-	
-    	sleep(10);
-    	exit();
 
-    }
+if(pid == 0)
+   {
+      while(1);
+      exit();
+	}
+else if(pid > 0)
+   {
+    if (pid1 == 0)
+      {
+        while(1);
+        exit();
+        }
+    else if( pid1 > 0)
+       {
+        if(pid2 == 0)
+        	{
+        	   while(1);
+        	   exit();
+        	   }
+        else if(pid2 > 0)
+        	{
+        	  
+                    int childs = getChildren(getpid());
+                    printf(1,"All Childrens Are %d .\n",childs);
+                    exit();
+		}
+	}
 
-  
-    // Note that pid is 0 in child process 
-    // and negative if fork() fails 
-    else 
-    { 
 
-	sleep(5);
-	printf(1, "all childrens are : %d \n", getChildren(getppid()));
-	exit();
-    } 
-        	
+
+}        	
         	
 return 0;
 }

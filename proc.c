@@ -548,15 +548,13 @@ argint(0, &pid);
     acquire(&ptable.lock);
 
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if(p->state == RUNNING)
-      {
+    
       	if(p -> parent -> pid == pid)
       	{
-      		res = res + pid*cons;
+      		res = res + p -> pid*cons;
       		cons = 10 * cons;
+      		cprintf("pid is : %d ppid is : %d \n", p->pid, p->parent->pid);
       	}
-      	cprintf("pid is : %d ppid is : %d \n", p->pid, p->parent->pid);
-      }
 
 
     }
