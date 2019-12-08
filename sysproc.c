@@ -98,22 +98,10 @@ return myproc()-> parent->pid;
 }
 
 
-<<<<<<< HEAD
-int
-sys_getChildren(void)
-{
-
-int pid;
-argint(0, &pid);
-return pid;
-
-}
-
 //return number of times a system call is invoked
 int
 sys_getCount(void)
 {
-return 231
+return 231;
 }
-=======
->>>>>>> 8d287d0438dffcbc4e82fa719e187198e7cda3da
+
