@@ -102,11 +102,8 @@ return myproc()-> parent->pid;
 int
 sys_getCount(void)
 {
-int call_num;//added
+int call_num;
 argint(0, &call_num);
-if (myproc->counter[call_num - 1] == null){
-  return 0;
-}
-return myproc->counter[call_num - 1];//added
+return myproc()->counter[call_num];
 }
 
